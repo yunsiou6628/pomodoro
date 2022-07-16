@@ -3,19 +3,19 @@ v-row#settings
   v-col(cols="12")
     h1.text-center 設定
   v-col(cols="12")
-    v-table
+    v-table(style="background: #FFB74D")
       thead
         tr
-          th 名稱
-          th 試聽
-          th 選擇
+          th(style="font-size: 18px;") 名稱
+          th(style="font-size: 18px;") 試聽
+          th(style="font-size: 18px;") 選擇
       tbody
         tr(v-for="alarm in alarms")
           td {{ alarm.name }}
           td
-            audio(controls :src="alarm.file")
+            audio(controls :src="alarm.file" class="mx-1 my-3")
           td
-            v-radio(v-model="selectedAlarm" :value="alarm.id")
+            v-radio(v-model="selectedAlarm" :value="alarm.id" color="red")
 </template>
 
 <script setup>

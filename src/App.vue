@@ -1,6 +1,6 @@
 <template lang="pug">
-v-app
-  v-app-bar(color="primary")
+v-app(style="background: #FFAB40;")
+  v-app-bar(color="#00695C")
     v-app-bar-title 番茄鐘
     v-spacer
     v-btn(icon to='/')
@@ -14,6 +14,11 @@ v-app
     v-btn(icon v-else @click="toggleNotify")
       v-icon mdi-bell-off
   v-main
+    v-container(style="width: 100%; height: 100%; position: absolute; top:0; left: 0; overflow:hidden; margin: 0; padding: 0; max-width: unset; opacity: 15%;")
+      img(src='https://i.imgur.com/qW4XfOU.png' style="position: absolute; top: -10%; left: -5%; height: 50%; transform: rotate(25deg);")
+      img(src='https://i.imgur.com/qW4XfOU.png' style="position: absolute; top: 0%; left: 55%; height: 18%; transform: rotate(10deg);")
+      img(src='https://i.imgur.com/qW4XfOU.png' style="position: absolute; top: 25%; right: -5%; height: 85%; transform: rotate(-25deg);")
+      img(src='https://i.imgur.com/qW4XfOU.png' style="position: absolute; top: 75%; left: 20%; height: 35%; transform: rotate(-30eg);")
     v-container
       router-view(v-slot="{ Component }")
         keep-alive(include="HomeView")

@@ -1,11 +1,12 @@
 <template lang="pug">
-v-row.text-center#home
-  v-col(cols="12")
+v-row.text-center#home(style="background: #FFB74D; width: 600px; height: 400px;" class="ma-auto mt-10 rounded-xl")
+  v-col(cols="12" class="ma-auto")
     h1 {{ currentText }}
     h1 {{ timeText }}
-  v-col(cols="12")
-    v-btn.mx-3(icon color="green" v-if="status !== 1" @click="startTimer")
-      v-icon mdi-play
+  v-col(cols="12" class="ma-auto")
+    v-btn.mx-3(icon color="green" v-if="status !== 1" @click="startTimer" style="width: 60%; height: 50px; border-radius:50px;")
+      p(style="color: #fff; display: inline; padding: 10px;") start
+      v-icon(style=" color: #fff; padding: 10px;") mdi-play
     v-btn.mx-3(icon color="blue" v-else @click="pauseTimer")
       v-icon mdi-pause
     v-btn.mx-3(icon color="red" v-if="current.length > 0" @click="finishTimer(true)")

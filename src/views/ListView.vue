@@ -11,11 +11,11 @@ v-row#list
       @click:append="onInputSubmit"
       @keydown.enter='onInputSubmit'
     )
-    v-table
+    v-table(style="background: #FFB74D;")
       thead
         tr
-          th 名稱
-          th 操作
+          th(style="font-size: 18px;") 名稱
+          th(style="font-size: 18px;") 操作
       tbody
         tr(v-if="items.length === 0")
           td.text-center(colspan="2") 沒有資料
@@ -25,14 +25,14 @@ v-row#list
             span(v-else) {{ item.name }}
           td
             span(v-if="item.edit")
-              v-btn(icon variant="plain" flat color="green" @click="confirmEditItem(i)")
+              v-btn(icon variant="outlined" flat color="fff" size="small" class="mx-1" @click="confirmEditItem(i)")
                 v-icon mdi-check
-              v-btn(icon variant="plain" flat color="red" @click="cancelEditItem(i)")
+              v-btn(icon variant="outlined" flat color="fff" size="small" class="mx-1" @click="cancelEditItem(i)")
                 v-icon mdi-undo
             span(v-else)
-              v-btn(icon variant="plain" flat color="green" @click="editItem(i)")
+              v-btn(icon variant="outlined" flat color="#fff" size="small" class="mx-1 my-3" @click="editItem(i)")
                 v-icon mdi-pencil
-              v-btn(icon variant="plain" flat color="red" @click="delItem(i)")
+              v-btn(icon variant="outlined" flat color="fff" size="small" class="mx-1 my-3" @click="delItem(i)")
                 v-icon mdi-delete
 </template>
 
